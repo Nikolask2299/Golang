@@ -5,7 +5,7 @@ import (
 	"math/rand"
 )
 
-import "github.com/Nikolask2299/Golang/game_life/pkg/life"
+import "game_life/pkg/life"
 
 // для хранения состояния
 type LifeService struct {

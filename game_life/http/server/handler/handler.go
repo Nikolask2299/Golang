@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-import "github.com/Nikolask2299/Golang/game_life/internal/service"
+import "game_life/internal/service"
 
 // создадим новый тип для добавления middleware к обработчикам
 type Decorator func(http.Handler) http.Handler

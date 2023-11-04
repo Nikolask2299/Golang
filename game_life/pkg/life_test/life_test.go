@@ -3,14 +3,14 @@ package life_test
 import "testing"
 
 // Так как это другой пакет, нужно его импортировать
-import "github.com/Nikolask2299/Golang/game_life/pkg/life"
+import "game_life/pkg/life"
 
 func TestNewWorld(t *testing.T) {
 	// Задаём размеры сетки
 	height := 10
 	width := 4
 	// Вызываем тестируемую функцию
-	world := life.NewWorld(height, width)
+	world, _ := life.NewWorld(height, width)
 	// Проверяем, что в объекте указана верная высота сетки
 	if world.Height != height {
 		t.Errorf("expected height: %d, actual height: %d", height, world.Height)

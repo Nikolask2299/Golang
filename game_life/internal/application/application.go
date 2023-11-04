@@ -9,7 +9,7 @@ import (
 	"go.uber.org/zap/zapcore"
 )
 
-import "github.com/Nikolask2299/Golang/game_life/http/server"
+import "game_life/http/server"
 
 type Config struct{
 	Width int

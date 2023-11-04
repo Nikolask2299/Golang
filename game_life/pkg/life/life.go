@@ -11,7 +11,7 @@ type World struct {
 	Cells  [][]bool
 }
 // Используйте код из предыдущего урока по игре «Жизнь»
-func NewWorld(height, width int) *World {
+func NewWorld(height, width int) (*World, error) {
 	// создаём тип World с количеством слайсов hight (количество строк)
 	cells := make([][]bool, height)
 	for i := range cells {
@@ -21,7 +21,7 @@ func NewWorld(height, width int) *World {
 		Height: height,
 		Width:  width,
 		Cells:  cells,
-	}
+	}, nil
 }
 func (w *World) next(x, y int) bool {
 	n := w.neighbors(x, y)       // получим количество живых соседей
@@ -60,7 +60,7 @@ func (w *World) neighbors(x, y int) int{
 	}
 	return res 
 }
-func NextState(oldWorld, newWorld *World)  {
+func NextState(oldWorld, newWorld *World) error {
 	// переберём все клетки, чтобы понять, в каком они состоянии
 	for i := 0; i < oldWorld.Height; i++ {
 		for j := 0; j < oldWorld.Width; j++ {
@@ -68,6 +68,7 @@ func NextState(oldWorld, newWorld *World)  {
 			newWorld.Cells[i][j] = oldWorld.next(j, i)
 		}
 	}
+	return nil
 }
 // RandInit заполняет поля на указанное число процентов
 func (w *World) RandInit(percentage int) {

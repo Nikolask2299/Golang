@@ -6,7 +6,7 @@ import (
 	
 ) 
 
-import "github.com/Nikolask2299/Golang/game_life/internal/application"
+import "game_life/internal/application"
 
 func main() {
 	ctx := context.Background()

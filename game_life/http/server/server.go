@@ -8,8 +8,8 @@ import (
 	"go.uber.org/zap"
 )
 
-import "github.com/Nikolask2299/Golang/game_life/http/server/handler"
-import "github.com/Nikolask2299/Golang/game_life/internal/service"
+import "game_life/http/server/handler"
+import "game_life/internal/service"
 
 // маршрутизация
 func new(ctx context.Context,
